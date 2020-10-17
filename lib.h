@@ -34,4 +34,11 @@ typedef struct doblenodo{
     Cliente cliente;
 }DobleNodo;
 
+
+typedef struct cab{
+    DobleNodo *first;
+    DobleNodo *last;
+}Cab;
+
+
 #endif // LIB_H_INCLUDED
