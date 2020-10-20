@@ -5,6 +5,12 @@
 
 int main()
 {
+    /*iniciarArchivo("clientes.txt");
+    */
+    Nodo *lista = NULL;
+    cargarDatos(&lista);
+    imprimirLista(lista);
+
 
 }
 

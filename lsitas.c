@@ -10,47 +10,41 @@ void agregarNodo(Nodo**lista, Cliente cliente){
     (*lista)->snod = NULL;
     (*lista)->next = NULL;
     (*lista)->cliente = cliente;
-    strcpy((*lista)->apynom,cliente.apynom);
-    (*lista)->id = cliente.id;
+    /*strcpy((*lista)->apynom,cliente.apynom);
+    (*lista)->id = cliente.id;*/
 }
 
 /*medir tamanio de la lista*/
 int listSize(Nodo *lista){
-    if(lista != NULL){
-        int cont = 0;
-        while(lista !=NULL){
-            cont++;
-            lista = lista->next;
-        }
-        printf("El tamanio de la lista es: %d\n",cont);
-        return cont;
-    }else{
-        printf("Lista vacia");
-        return 0;
+    int cont = 0;
+    while(lista !=NULL){
+        cont++;
+        lista = lista->next;
     }
+    printf("El tamanio de la lista es: %d\n",cont);
+    return cont;
 }
 
 /*carga ordenada*/
 void cargarOrdenado(Nodo **lista,Cliente cliente){
     Nodo *nod = NULL;
     agregarNodo(&nod, cliente);
-    if(*lista != NULL){
+    if(*lista){
         if((*lista)->id > nod->id){
             nod->next = *lista;
             *lista = nod;
         }else{
             Nodo *aux = *lista;
-            while(aux->next && (aux->next->id != nod->id))
+            while(aux->next && (aux->next->id < nod->id))
                 aux = aux->next;
 
             if(aux->next && (aux->next->id == nod->id)){
                 printf("\nEl elemento ya se encuentra en la lista\n");
-                aux = aux->next;
-                return;
             }
-            if(aux->next && (aux->next->id < nod->id))
-                nod->next = aux->next;
-
+            else{
+                if(aux->next && (aux->next->id < nod->id))
+                    nod->next = aux->next;
+            }
             aux->next = nod;
         }
     }else
@@ -62,9 +56,6 @@ Nodo *buscarNodo(Nodo *lista){
     int id = datoClave();
     if(lista){
         Nodo *aux = lista;
-        if(aux->id ==id)
-            return aux;
-        else {
             while(aux && (aux->id != id))
                 aux = aux->next;
             if(id == aux->id)
@@ -73,17 +64,18 @@ Nodo *buscarNodo(Nodo *lista){
                 printf("Elemento no encontrado\n");
                 return NULL;
             }
-        }
-
     }else
         printf("Lista vacia\n");
         return NULL;
 }
 
 void eliminarInicio(Nodo **lista){
-    Nodo *eliminado = *lista;
-    *lista = (*lista)->next;
-    free(eliminado);
+    if(*lista){
+        Nodo *eliminado = *lista;
+        *lista = (*lista)->next;
+        free(eliminado);
+    }else
+        printf("Lista vacia\n");
 }
 
 /*eliminar por busqueda*/
@@ -100,16 +92,16 @@ int eliminarBusqueda(Nodo **lista ,int id){
                 return 1;
             }
         }else{
-            while((nodo && nodo->next) && (id != nodo->next->id))
-                nodo == nodo->next;
-            if(id == nodo->next->id){
+            while((nodo->next) && (id != nodo->next->id))
+                nodo = nodo->next;
+            if( nodo->next &&(id == nodo->next->id)){
                 Nodo *eliminado = nodo->next;
                 nodo->next = eliminado->next;
                 free(eliminado);
                 return 1;
             }else {
                 printf("No se pudo encontrar el elemento\n");
-                return 0;
+                return -1;
             }
         }
     }
@@ -140,28 +132,25 @@ int datoClave(){
 /*cargamos los datos del archivo a una lista*/
 void cargarDatos(Nodo **lista){
     FILE *f = fopen("clientes.txt","r");
-    Nodo *aux = *lista;
-    if(validarArchivo(f)){
+    if(f){
         Cliente client;
-        while(!feof(f)){
-            client = cargarCliente(f);
-            cargarOrdenado(&aux,client);
-            aux = aux->next;
+        while(fscanf(f,"%d %f %d %d %d %s",&client.id,&client.venta,&client.fecha.dd,&client.fecha.mm,&client.fecha.yy,client.apynom) == 6){
+            /*client = cargarCliente(f);*/
+            cargarOrdenado(&(*lista),client);
         }
-        fclose(f);
     }else
         printf("No se pudo encontrar el archivo");
     fclose(f);
 }
+
 /*guardamos los datos en un fichero txt*/
-void guardarDatosDatos(Nodo *lista){
+void guardarDatos(Nodo *lista){
     FILE *f = fopen("clientes.txt","w");
     if(lista){
         Nodo *aux = lista;
         if(validarArchivo(f)){
             while(aux){
                 fprintf(f,"%d\t%s\t%f\t%d\t%d\t%d",aux->cliente.id,aux->cliente.apynom,aux->cliente.venta,aux->cliente.fecha.dd,aux->cliente.fecha.mm,aux->cliente.fecha.yy);
-                fprintf(f,"\n");
                 aux = aux->next;
             }
             fclose(f);
@@ -170,6 +159,4 @@ void guardarDatosDatos(Nodo *lista){
         printf("Lista vacia\n");
     fclose(f);
 }
-
-
 
