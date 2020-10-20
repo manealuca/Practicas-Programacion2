@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1603213905 source:c:\users\asus\desktop\progra2\practica_recuperatorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+	"listas.h"
+
+1603223401 c:\users\asus\desktop\progra2\practica_recuperatorio\lib.h
+
+1603203923 c:\users\asus\desktop\progra2\practica_recuperatorio\listas.h
+
+1603223670 source:c:\users\asus\desktop\progra2\practica_recuperatorio\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"lib.h"
+
+1603223084 source:c:\users\asus\desktop\progra2\practica_recuperatorio\lsitas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"lib.h"
+
+1603223322 source:c:\users\asus\desktop\progra2\practica_recuperatorio\lista_doble.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	"lib.h"
+
