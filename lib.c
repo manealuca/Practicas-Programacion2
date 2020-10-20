@@ -3,28 +3,17 @@
 #include<string.h>
 #include<conio.h>
 #include"lib.h"
-//genera nodo
-void agregarNodo(Nodo**lista, Cliente cliente){
-    *lista->snod = NULL;
-    *lista->next = NULL;
-    strcpy((*lista)->apynom,cliente.apynom);
 
+//abre el archivo en modo lectura si no existe lo crea
+void iniciarArchivo(char file[]){
+    FILE *p = fopen(file,"r");
+    if(p!=NULL){
+        if(fclose(p))printf("No se pudo creaar el archivo");
+    }else{
+        FILE *p = fopen(file,"w");
+        if(p!=NULL)if(fclose(p))printf("No se pudo crear el archivo");
+    }
 }
-//medir tamanio de la lista
-void listSize(Nodo *lista){
-    if(lista != NULL){
-        int cont = 0;
-        while(lista !=NULL){
-            cont++;
-            lista = lista->next;
-        }
-        printf("El tamanio de la lista es: %d\n",cont);
-    }else
-        printf("Lista vacia");
-}
-
-
-
 
 void incertarPrimero(Nodo **lista){
     Nodo *nod = (Nodo*)malloc(sizeof(Nodo*));
@@ -34,6 +23,14 @@ void incertarPrimero(Nodo **lista){
     (*lista)->next = nod->next;
 }
 
-
+//valida la apertura del archivo
+int validarArchivo(FILE *p){
+    if(p)
+        return 1;
+    else{
+        printf("No se pudo abrir el archivo\n");
+        return 0;
+    }
+}
 
 

@@ -18,13 +18,14 @@ typedef struct cliente{
     int id;
     float venta;
     char apynom[60];
-    Fechaa *fecha;
+    Fecha *fecha;
 }Cliente;
 
 typedef struct nodo{
     int id;
     char apynom[60];
     struct nodo *next;
+    Cliente cliente;
     Subnod *snod;
 }Nodo;
 
