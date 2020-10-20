@@ -18,7 +18,7 @@ typedef struct cliente{
     int id;
     float venta;
     char apynom[60];
-    Fecha *fecha;
+    Fecha fecha;
 }Cliente;
 
 typedef struct nodo{
@@ -39,7 +39,13 @@ typedef struct doblenodo{
 typedef struct cab{
     DobleNodo *first;
     DobleNodo *last;
+    int elementos;
 }Cab;
 
-
+Cliente nuevoCliente();
+Cliente cargarCliente();
+int validarArchivo(FILE *p);
+void incertarPrimero(Nodo **lista);
+Cliente nuevoCliente();
+void mostrarCliente(Cliente cliente);
 #endif // LIB_H_INCLUDED
