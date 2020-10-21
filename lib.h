@@ -41,6 +41,7 @@ typedef struct cab{
     DobleNodo *last;
     int elementos;
 }Cab;
+
 int datoClave();
 Cliente nuevoCliente();
 Cliente cargarCliente();

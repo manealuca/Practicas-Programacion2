@@ -4,6 +4,7 @@
 #include<conio.h>
 #include"lib.h"
 #include"listas.h"
+#include "sublista.h"
 /*genera nodo*/
 Nodo *agregarNodo(Cliente cliente){
     Nodo*nod = (Nodo*)malloc(sizeof(Nodo));
@@ -125,11 +126,17 @@ void imprimirLista(Nodo **lista){
 /*cargamos los datos del archivo a una lista*/
 void cargarDatos(Nodo **lista){
     FILE *f = fopen("clientes.txt","r");
+    /*Archivo de la sublista
+    FILE *p = fopen("archivo.txt","r");*/
     if(f){
         Cliente client;
         while(fscanf(f,"%d %f %d %d %d %s",&client.id,&client.venta,&client.fecha.dd,&client.fecha.mm,&client.fecha.yy,client.apynom) == 6){
             /*client = cargarCliente(f);*/
             cargarOrdenado(lista,client);
+            /*invocamos a la funcion para cargar la sublista en caso de ser necesario
+             cliente2 = cargarSublistaArchivo(lista,p);
+            */
+
         }
     }else
         printf("No se pudo encontrar el archivo");
