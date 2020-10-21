@@ -109,6 +109,7 @@ int eliminarBusqueda(Nodo **lista ,int id){
     }
 }
 
+/*Muestea en pantalla la lista enlasada*/
 void imprimirLista(Nodo **lista){
     Nodo *aux = *lista;
     if(*lista){
@@ -122,7 +123,6 @@ void imprimirLista(Nodo **lista){
         printf("Lista vacia\n");
 }
 
-
 /*cargamos los datos del archivo a una lista*/
 void cargarDatos(Nodo **lista){
     FILE *f = fopen("clientes.txt","r");
@@ -134,7 +134,7 @@ void cargarDatos(Nodo **lista){
             /*client = cargarCliente(f);*/
             cargarOrdenado(lista,client);
             /*invocamos a la funcion para cargar la sublista en caso de ser necesario
-             cliente2 = cargarSublistaArchivo(lista,p);
+             cliente2 = cargarSublistaArchivo(lista,p)
             */
 
         }

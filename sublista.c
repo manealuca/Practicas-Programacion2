@@ -7,9 +7,9 @@
 Subnod *agregarSubNodo(Cliente client){
     Subnod *snod = (Subnod*)malloc(sizeof(Subnod));
     snod->next = NULL;
-    snod->fecha = client->fecha;
-    snod.id = client.id;
-    snod.ventas = client.venta;
+    snod->fecha = client.fecha;
+    snod->id = client.id;
+    snod->ventas = client.venta;
     return snod;
 }
 /*Agregamos subnodo ordenado*/
@@ -17,19 +17,19 @@ void cargarOrdenadoSublista(Subnod **lista,Cliente cliente){
     Subnod *snod = NULL;
     snod = agregarSubNodo(cliente);
     if(*lista){
-        if((*lista).id < snod->id){
+        if((*lista)->id < snod->id){
             snod->next = *lista;
             *lista = snod;
         }else{
             Nodo *aux = *lista;
-            while(aux->next && (aux->next.id > snod->id))
+            while(aux->next && (aux->next->id > snod->id))
                 aux = aux->next;
 
-            if(aux->next && (aux->next.id == snod->id)){
+            if(aux->next && (aux->next->id == snod->id)){
                 printf("\nEl elemento ya se encuentra en la lista\n");
             }
             else{
-                if(aux->next && (aux->next.id >  snod->id))
+                if(aux->next && (aux->next->id >  snod->id))
                     snod->next = aux->next;
             }
             aux->next = snod;
@@ -40,13 +40,12 @@ void cargarOrdenadoSublista(Subnod **lista,Cliente cliente){
 
 
 /*llenar la sublista  completa desde el nodo de una lista doblemente enlazada*/
-aaa
 void cargarSublistaCompleta(Cab **lista,int id,Nodo **list){
     if(*lista){
         DobleNodo *aux = (*lista)->first;
         while(aux!=NULL){
-            if(aux.cliente.id == id){
-                cargarOrdenadoSublista(&(*list)->snod,aux->cliente)
+            if(aux->cliente.id == id){
+                cargarOrdenadoSublista(&(*list)->snod,aux->cliente);
             }
             aux = aux->next;
         }
@@ -65,6 +64,6 @@ Cliente cargarSublistaArchivo(Nodo **lista,FILE *f){
                 return client;
     }else
         printf("Ocurrio un error al cargar los datos \n");
-    return NULL;
+    return;
 }
 

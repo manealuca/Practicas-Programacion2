@@ -42,6 +42,15 @@ typedef struct cab{
     int elementos;
 }Cab;
 
+typedef struct nodocircular{
+    struct nodocircular *next;
+    Cliente cliente;
+}NodoCircular;
+/*Auxiliares para operar la lista circualar*/
+NodoCircular *circular2;
+
+
+
 int datoClave();
 Cliente nuevoCliente();
 Cliente cargarCliente();
@@ -49,4 +58,5 @@ int validarArchivo(FILE *p);
 void incertarPrimero(Nodo **lista);
 Cliente nuevoCliente();
 void mostrarCliente(Cliente cliente);
-#endif // LIB_H_INCLUDED
+
+#endif

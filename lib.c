@@ -8,7 +8,7 @@
 /*levanta los datos desde un fichero*/
 Cliente cargarCliente(FILE* f){
     Cliente client;
-    if(fscanf(f,"%d\t%[ ^\t]\t%f\t%d\t%d\t%d",&client.id,client.apynom,&client.venta,client.fecha.dd,&client.fecha.mm,&client.fecha.yy) == 6)
+    if(fscanf(f,"%d %f %d %d %d %s",&client.id,&client.venta,client.fecha.dd,&client.fecha.mm,&client.fecha.yy,client.apynom) == 6)
         return client;
     else
         return;
@@ -24,13 +24,6 @@ void iniciarArchivo(char file[]){
     }
 }
 
-void incertarPrimero(Nodo **lista){
-    Nodo *nod = (Nodo*)malloc(sizeof(Nodo*));
-    agregarNodo(&nod,nuevoCliente());
-    nod->next = *lista;
-    *lista  = nod;
-    (*lista)->next = nod->next;
-}
 
 /*valida la apertura del archivo*/
 int validarArchivo(FILE *p){
