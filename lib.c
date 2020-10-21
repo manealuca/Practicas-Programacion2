@@ -42,6 +42,15 @@ int validarArchivo(FILE *p){
     }
 }
 
+/*cargamos el primary key*/
+int datoClave(){
+    int id;
+    printf("Ingrese id\n");scanf("%d",&id);fflush(stdin);
+    system("cls");
+    return id;
+}
+
+
 Cliente nuevoCliente(){
     Cliente client;
     return client;
