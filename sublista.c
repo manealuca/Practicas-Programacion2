@@ -67,3 +67,35 @@ Cliente cargarSublistaArchivo(Nodo **lista,FILE *f){
     return;
 }
 
+
+void eliminarSublistaPorBusqueda(Nodo **lista, Fecha fecha){
+    Subnod *nodo = (*lista)->snod;
+    do{
+        if((*lista)->snod->fecha.dd != fecha.dd)
+            (*lista)->snod = (*lista)->snod->next;
+    }while((*lista)->snod->fecha.dd != fecha.dd);
+
+    if((*lista)->snod->fecha.dd == fecha.dd){
+            free((*lista)->snod);
+            (*lista)->snod = NULL;
+        }else{
+            nodo = (*lista)->snod->next;
+            (*lista)->snod->next = nodo->next;
+            free(nodo);
+        }
+    }
+
+
+
+
+void eliminarSublista(Nodo **lista){
+    Subnod *snod = (*lista)->snod;
+    if((*lista)->snod){
+        while(snod !=NULL){
+            snod = (*lista)->next;
+            free(snod);
+        }
+        free((*lista)->snod);
+        (*lista)->snod = NULL;
+    }
+}

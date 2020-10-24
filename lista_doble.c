@@ -135,8 +135,7 @@ void eliminar_nodo_doble(Cab *lista){
 }
 
 /*Carga la lista de manera ordenada*/
-void cargaOrdenadoDoble(Cab **cab, Cliente client)
-{
+void cargaOrdenadoDoble(Cab **cab, Cliente client){
 
     DobleNodo *aux;
     DobleNodo *nodo=NULL;

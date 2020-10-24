@@ -3,6 +3,9 @@
 #include"lib.h"
 #include"listas.h"
 #include"lista_doble.h"
+#include"lista_circular_simple.h"
+#include"sublista.h"
+
 int main()
 {
     iniciarArchivo("clientes.txt");
@@ -17,7 +20,6 @@ int main()
     system("pause");system("cls");
     DobleNodo *aux = obtener_nodo(&head,2012);
     mostrarCliente(aux->cliente);
-    /*printf("%d",obtener_nodo(head,datoClave())->cliente.id);
-    */
+
 }
 
