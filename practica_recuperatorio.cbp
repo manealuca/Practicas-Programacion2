@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="arbol_binario.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="arbol_binario.h" />
 		<Unit filename="clientes.txt" />
 		<Unit filename="lib.c">
 			<Option compilerVar="CC" />

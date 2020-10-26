@@ -1,6 +1,7 @@
 #ifndef LIB_H_INCLUDED_
 #define LIB_H_INCLUDED_
 
+
 typedef struct fecha{
     int dd;
     int mm;
@@ -20,6 +21,15 @@ typedef struct cliente{
     char apynom[60];
     Fecha fecha;
 }Cliente;
+
+typedef struct nodoA{
+    Cliente cliente;
+    struct nodoA *left;
+    struct nodoA *right;
+    struct nodoA *father;
+}NodoA;
+
+typedef NodoA Arbol;
 
 typedef struct nodo{
     int id;
@@ -48,6 +58,11 @@ typedef struct nodocircular{
 }NodoCircular;
 /*Auxiliares para operar la lista circualar*/
 NodoCircular *circular2;
+
+typedef struct pila{
+    Nodo *head;
+    int elementos;
+}Pila;
 
 
 

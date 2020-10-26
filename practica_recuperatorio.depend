@@ -6,7 +6,7 @@
 	<conio.h>
 	"lib.h"
 
-1603309300 c:\users\asus\desktop\progra2\practica_recuperatorio\lib.h
+1603740616 c:\users\asus\desktop\progra2\practica_recuperatorio\lib.h
 
 1603322626 source:c:\users\asus\desktop\progra2\practica_recuperatorio\lista_doble.c
 	<stdio.h>
@@ -31,9 +31,9 @@
 	"lista_circular_simple.h"
 	"sublista.h"
 
-1603245903 c:\users\asus\desktop\progra2\practica_recuperatorio\listas.h
+1603739972 c:\users\asus\desktop\progra2\practica_recuperatorio\listas.h
 
-1603307583 source:c:\users\asus\desktop\progra2\practica_recuperatorio\sublista.c
+1603324826 source:c:\users\asus\desktop\progra2\practica_recuperatorio\sublista.c
 	<stdio.h>
 	<stdlib.h>
 	"lib.h"
@@ -59,4 +59,12 @@
 	"lista_circular_simple.h"
 
 1603309253 c:\users\asus\desktop\progra2\practica_recuperatorio\lista_circular_simple.h
+
+1603740751 source:c:\users\asus\desktop\progra2\practica_recuperatorio\arbol_binario.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+	"arbol_binario.h"
+
+1603740767 c:\users\asus\desktop\progra2\practica_recuperatorio\arbol_binario.h
 
