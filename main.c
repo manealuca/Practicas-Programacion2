@@ -5,6 +5,7 @@
 #include"lista_doble.h"
 #include"lista_circular_simple.h"
 #include"sublista.h"
+#include "colas.h"
 
 int main()
 {

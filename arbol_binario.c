@@ -13,11 +13,7 @@ NodoA* agregarNodoA(Cliente client,NodoA *father){
     return nod;
 }
 
-
-
-
 /* INICIALIZACION DE UN ARBOL NodoA *arbol = NULL*/
-
 static void incertarConPadre(NodoA **arbol,NodoA *father ,Cliente client)
 {
     if(*arbol){
@@ -36,6 +32,7 @@ void IncertarNodoA(NodoA **arbol, Cliente client){
     incertarConPadre(arbol, NULL, client);
 }
 
+
 int Existe(NodoA *arbol, Cliente client){
     /*si existe en el arbol devuelve si no devuelve 0*/
     if(arbol== NULL) return 0;
@@ -46,6 +43,7 @@ int Existe(NodoA *arbol, Cliente client){
         return Existe(arbol->left, client);
     else return Existe(arbol->right, client);
 }
+
 
 void DeterminarExistencia(NodoA *arbol,Cliente client){
     if(Existe(arbol,client)) printf("El nodo buscado existe en el arbol\n");
@@ -73,6 +71,7 @@ NodoA *ObtenerNodoA(NodoA *arbol, Cliente client){
         return ObtenerNodoA(arbol->right,client);
 }
 
+
 void inOrder(NodoA *arbol){
     if(arbol == NULL)
         printf(" - ");
@@ -92,7 +91,6 @@ void postOrder(NodoA *arbol){
         postOrder(arbol->right);printf(")");
     }
 }
-
 
 /*Funciones de eliminacion*/
 void DestruirNodoA(NodoA *nodo){
@@ -125,7 +123,6 @@ static NodoA* Minimo(NodoA* arbol){
 }
 
 
-
 static void EliminarNodoA(NodoA *target){
     if(target->left && target->right){
         /*Si tiene 2 hijos*/
@@ -146,6 +143,7 @@ static void EliminarNodoA(NodoA *target){
         DestruirNodoA(target);
     }
 }
+
 
 void Eliminar(NodoA *arbol, Cliente client){
     if(arbol == NULL) return;

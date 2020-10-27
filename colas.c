@@ -72,35 +72,36 @@ void elimianrCola(Cola **cola){
 
 */
 
-Nodo *agregarNodoCola(Cliente client){
+
+Nodo *nuevoNodoCola(Cliente client){
     Nodo *nodo = (Nodo*)malloc(sizeof(Nodo));
     nodo->cliente = client;
     nodo->next = NULL;
     return nodo;
 }
 
-void DestruirNodoCola(Nodo *nodo){
-    nodo->next = NULL;
-    free(nodo);
+
+
+void CrearCola(Cola *cola){
+    (*cola).first = (*cola).last = NULL;
 }
 
-
-
-Cola *CrearCola(){
-    Cola *cola = (Cola*)malloc(sizeof(Cola));
-    cola->first = cola->last = NULL;
-    return cola;
+int esColaVacia(Cola cola){
+    return cola.first == NULL;
 }
 
 void Encolar(Cola *cola, Cliente client){
-    Nodo *nodo = agregarNodoCola(client);
-    if(!cola->first){
-        cola->first = nodo;
-        cola->last = nodo;
-    }else{
-        cola->last->next = nodo;
-        cola->last = nodo;
-    }
+    Nodo *nodo = nuevoNodoCola(client);
+    if(nodo){
+        if(esColaVacia(*cola)){
+            (*cola).first = nodo;
+            (*cola).last = nodo;
+        }else{
+            (*cola).last->next = nodo;
+            (*cola).last = nodo;
+        }
+    }else
+        printf("Memoria llena");
 }
 
 Cliente Consultar(Cola *cola){
@@ -113,22 +114,28 @@ Cliente Consultar(Cola *cola){
 
 void DestruirCola(Cola *cola){
     while(cola->first){
-        ElimianrHead(cola);
+        Encolar(cola,cola->first->cliente);
     }
     free(cola);
 }
 
-Cliente ElimianrHead(Cola *cola){
-    if(cola->first){
-        Cliente client = cola->first->cliente;
-        Nodo *target = cola->first;
-        cola->first = cola->first->next;
-        DestruirNodoCola(target);
-        if(!cola->first)
-            cola->last = NULL;
+Cliente Desencolar(Cola *cola){
+    Cliente client;
+    if(esColaVacia(*cola)){
+         client = (*cola).first->cliente;
+        Nodo *target = (*cola).first;
+        (*cola).first = (*cola).first->next;
+        free(target);
+        if(!((*cola).first))
+            (*cola).last = NULL;
         return client;
-    }
-    return;
+    }else
+        printf("Esta vacio\n");
+
 }
 
+void mostrarCola(Cola *cola){
+    while(!esColaVacia(*cola))
+        mostrarCliente(Desencolar(&(*cola)));
+}
 
