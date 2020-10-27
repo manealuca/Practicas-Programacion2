@@ -64,7 +64,10 @@ typedef struct pila{
     int elementos;
 }Pila;
 
-
+typedef struct cola{
+    Nodo *first;
+    Nodo *last;
+}Cola;
 
 int datoClave();
 Cliente nuevoCliente();

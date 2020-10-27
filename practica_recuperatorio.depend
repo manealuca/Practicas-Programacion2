@@ -6,7 +6,7 @@
 	<conio.h>
 	"lib.h"
 
-1603740616 c:\users\asus\desktop\progra2\practica_recuperatorio\lib.h
+1603754802 c:\users\asus\desktop\progra2\practica_recuperatorio\lib.h
 
 1603322626 source:c:\users\asus\desktop\progra2\practica_recuperatorio\lista_doble.c
 	<stdio.h>
@@ -67,4 +67,12 @@
 	"arbol_binario.h"
 
 1603740767 c:\users\asus\desktop\progra2\practica_recuperatorio\arbol_binario.h
+
+1603755007 source:c:\users\asus\desktop\progra2\practica_recuperatorio\colas.c
+	<stdio.h>
+	<stdlib.h>
+	"colas.h"
+	"lib.h"
+
+1603754249 c:\users\asus\desktop\progra2\practica_recuperatorio\colas.h
 

@@ -1,7 +1,8 @@
+#include <stdio.h>
+#include<stdlib.h>
 #include"colas.h"
-int estallenaest(ColaEst cola){
-    return(((cola.first>cola.last)&&((cola.first-cola.last)==1))||((cola.fist<cola.last)&&(cola.last-cola-first) == MAX-1));
-}
+#include "lib.h"
+
 /*
 Cliente encolarEstatico(ColaEst *cola, Cliente client){
     if(!estallenaest(*cola)){
@@ -9,7 +10,10 @@ Cliente encolarEstatico(ColaEst *cola, Cliente client){
             (*cola).last
         }
 }
-*/
+*//*
+int estallenaest(ColaEst cola){
+    return(((cola.first>cola.last)&&((cola.first-cola.last)==1))||((cola.fist<cola.last)&&(cola.last-cola-first) == MAX-1));
+}
 int vacia(){
     if(root == NULL)
         return 1
@@ -65,3 +69,66 @@ void elimianrCola(Cola **cola){
         free(ptr;)
     }
 }
+
+*/
+
+Nodo *agregarNodoCola(Cliente client){
+    Nodo *nodo = (Nodo*)malloc(sizeof(Nodo));
+    nodo->cliente = client;
+    nodo->next = NULL;
+    return nodo;
+}
+
+void DestruirNodoCola(Nodo *nodo){
+    nodo->next = NULL;
+    free(nodo);
+}
+
+
+
+Cola *CrearCola(){
+    Cola *cola = (Cola*)malloc(sizeof(Cola));
+    cola->first = cola->last = NULL;
+    return cola;
+}
+
+void Encolar(Cola *cola, Cliente client){
+    Nodo *nodo = agregarNodoCola(client);
+    if(!cola->first){
+        cola->first = nodo;
+        cola->last = nodo;
+    }else{
+        cola->last->next = nodo;
+        cola->last = nodo;
+    }
+}
+
+Cliente Consultar(Cola *cola){
+    if(cola->first)
+        return cola->first->cliente;
+    else
+        return;
+}
+
+
+void DestruirCola(Cola *cola){
+    while(cola->first){
+        ElimianrHead(cola);
+    }
+    free(cola);
+}
+
+Cliente ElimianrHead(Cola *cola){
+    if(cola->first){
+        Cliente client = cola->first->cliente;
+        Nodo *target = cola->first;
+        cola->first = cola->first->next;
+        DestruirNodoCola(target);
+        if(!cola->first)
+            cola->last = NULL;
+        return client;
+    }
+    return;
+}
+
+

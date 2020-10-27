@@ -153,3 +153,27 @@ void Eliminar(NodoA *arbol, Cliente client){
     else if(client.id >arbol->right->cliente.id) Eliminar(arbol->right,client);
     else EliminarNodoA(arbol);
 }
+
+
+void incertarArbolNoRecursivo(NodoA **arbol, Cliente client){
+    NodoA *aux =agregarNodoA(client,*arbol);
+    if(*arbol == NULL){
+        *arbol = aux;
+    }else{
+        NodoA *nodprev, *nod;
+        nod = *arbol;
+        nodprev = NULL;
+
+        while(nod){
+            nodprev = nod;
+            if(client.id<= nod->cliente.id)
+                nod =nod->left;
+            else
+                nod = nod->right;
+        }
+        if(client.id<= nod->cliente.id)
+            nodprev->left = aux;
+        else
+            nodprev->right = aux;
+    }
+}

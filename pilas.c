@@ -20,12 +20,12 @@ Cliente desapilar(Pila *pila){
         pila->elementos--;
         return client;
     }
-    return NULL;
+    return;
 }
 
 Cliente Head(Pila *pila){
     if(pila->head == NULL)
-        return NULL;
+        return;
     else
         return pila->head->cliente;
 }
@@ -48,7 +48,7 @@ void destruirPila(Pila *pila){
     free(pila);
 }
 
-int longPila(){
+int longPila(Pila *pila){
     return pila->elementos;
 }
 
