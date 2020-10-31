@@ -6,8 +6,9 @@
 #include"lista_circular_simple.h"
 #include"sublista.h"
 #include "colas.h"
+#include "arbol_binario.h"
 
-int main()
+void main()
 {
     iniciarArchivo("clientes.txt");
     Nodo *lista = NULL;
@@ -21,6 +22,10 @@ int main()
     system("pause");system("cls");
     DobleNodo *aux = obtener_nodo(&head,2012);
     mostrarCliente(aux->cliente);
+    system("pause");system("cls");
+    NodoA *tree = NULL;
+    IncertarNodoA(&tree,aux->cliente);
+    preOrden(tree);
 
 }
 

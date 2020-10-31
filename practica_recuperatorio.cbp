@@ -36,6 +36,10 @@
 		</Unit>
 		<Unit filename="arbol_binario.h" />
 		<Unit filename="clientes.txt" />
+		<Unit filename="colas.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="colas.h" />
 		<Unit filename="lib.c">
 			<Option compilerVar="CC" />
 		</Unit>
