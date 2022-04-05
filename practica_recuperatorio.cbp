@@ -31,9 +31,43 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="arbol_binario.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="arbol_binario.h" />
+		<Unit filename="clientes.txt" />
+		<Unit filename="colas.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="colas.h" />
+		<Unit filename="lib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lib.h" />
+		<Unit filename="lista_circular_simple.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lista_circular_simple.h" />
+		<Unit filename="lista_doble.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lista_doble.h" />
+		<Unit filename="listas.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="listas.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="pilas.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="pilas.h" />
+		<Unit filename="practica_recuperatorio.cbp" />
+		<Unit filename="sublista.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="sublista.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

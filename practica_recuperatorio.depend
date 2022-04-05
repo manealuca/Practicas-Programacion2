@@ -1,0 +1,89 @@
+# depslib dependency file v1.0
+1603309508 source:c:\users\asus\desktop\progra2\practica_recuperatorio\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"lib.h"
+
+1603754802 c:\users\asus\desktop\progra2\practica_recuperatorio\lib.h
+
+1603322626 source:c:\users\asus\desktop\progra2\practica_recuperatorio\lista_doble.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	"lib.h"
+
+1603232743 source:c:\users\asus\desktop\progra2\practica_recuperatorio\lsitas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"lib.h"
+
+1604147612 source:c:\users\asus\desktop\progra2\practica_recuperatorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+	"listas.h"
+	"lista_doble.h"
+	"lista_circular_simple.h"
+	"sublista.h"
+	"colas.h"
+	"arbol_binario.h"
+
+1603739972 c:\users\asus\desktop\progra2\practica_recuperatorio\listas.h
+
+1603324826 source:c:\users\asus\desktop\progra2\practica_recuperatorio\sublista.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+	"sublista.h"
+
+1603309034 source:c:\users\asus\desktop\progra2\practica_recuperatorio\listas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"lib.h"
+	"listas.h"
+	"sublista.h"
+
+1604148609 c:\users\asus\desktop\progra2\practica_recuperatorio\lista_doble.h
+
+1603308961 c:\users\asus\desktop\progra2\practica_recuperatorio\sublista.h
+
+1603309275 source:c:\users\asus\desktop\progra2\practica_recuperatorio\lista_circular_simple.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+	"lista_circular_simple.h"
+
+1603309253 c:\users\asus\desktop\progra2\practica_recuperatorio\lista_circular_simple.h
+
+1604146959 source:c:\users\asus\desktop\progra2\practica_recuperatorio\arbol_binario.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+	"arbol_binario.h"
+	"lib.h"
+
+1603740767 c:\users\asus\desktop\progra2\practica_recuperatorio\arbol_binario.h
+
+1603759973 source:c:\users\asus\desktop\progra2\practica_recuperatorio\colas.c
+	<stdio.h>
+	<stdlib.h>
+	"colas.h"
+	"lib.h"
+
+1604147206 c:\users\asus\desktop\progra2\practica_recuperatorio\colas.h
+
+1603755047 source:c:\users\asus\desktop\progra2\practica_recuperatorio\pilas.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+	"pilas.h"
+
+1603753963 c:\users\asus\desktop\progra2\practica_recuperatorio\pilas.h
+
